@@ -146,6 +146,18 @@ The [samples](./src/nova_act/samples) folder contains several examples of using 
 * search for apartments on a real estate website, find each apartment's distance from a train station using a maps website, and combine these into a single result set. [This sample](./src/nova_act/samples/search_apartments_calculate_commute.py) demonstrates running multiple NovaActs in parallel (more detail below).
 * book a flight using data that is provided by a tool, and return the booking number. [This sample](./src/nova_act/samples/booking_with_data_from_tool.py) demonstrates how to implement a python function as a tool that can be used to provide data for the workflow.
 * allows a human to log into an email application, and approve to print the number of emails. [This sample](./src/nova_act/samples/print_number_of_emails.py) demonstrates providing HITL (Human in the loop) callback implementations to incorporate human participation in the workflow.
+* bootstrap a production-oriented assistant with Nova 2 Lite tool-use, Nova 2 Sonic stream bootstrap and live audio loop, Google Workspace API integrations, Nova Act browser fallback, policy-guarded OS desktop control, cloud audit sinks, and autonomous execution mode. [This sample](./src/nova_act/samples/nova_hackathon_assistant.py) demonstrates a practical architecture for voice/API/browser/desktop workflows.
+* run a mission-oriented digital robot runtime with Observe-Plan-Act-Verify-Learn cycles, human-supervised checkpoints, autonomous mode, and checkpoint resume support. [This sample](./src/nova_act/samples/digital_robot_system.py) demonstrates a durable architecture for beyond-hackathon automation.
+
+To run the production sample with Google and desktop tools, install optional dependencies:
+
+```bash
+pip install -r src/nova_act/samples/requirements-nova-hackathon-assistant.txt
+```
+
+Detailed setup: [NOVA_HACKATHON_ASSISTANT_SETUP.md](./src/nova_act/samples/NOVA_HACKATHON_ASSISTANT_SETUP.md)
+
+Digital robot runtime guide: [DIGITAL_ROBOT_SYSTEM.md](./src/nova_act/samples/DIGITAL_ROBOT_SYSTEM.md)
 
 For more samples showing how to use Nova Act SDK, please refer to this [Github repository](https://github.com/amazon-agi-labs/nova-act-samples)
 

@@ -1,0 +1,6 @@
+google-api-python-client>=2.169.0
+google-auth>=2.41.0
+google-auth-oauthlib>=1.2.2
+mss>=10.1.0
+pyautogui>=0.9.54
+sounddevice>=0.5.2
