@@ -1,0 +1,5 @@
+src/nova_act/__pycache__/
+services/backend/app/__pycache__/
+tests/__pycache__/
+.pytest_cache/
+__pycache__/

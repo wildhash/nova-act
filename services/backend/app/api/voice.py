@@ -168,6 +168,8 @@ async def voice_stream(websocket: WebSocket, session_id: str) -> None:
                             break
                     except json.JSONDecodeError:
                         pass
+        except asyncio.CancelledError:
+            pass  # Graceful shutdown — do not propagate
         finally:
             await audio_queue.put(None)  # Signal end-of-stream
 
@@ -217,6 +219,10 @@ async def voice_stream(websocket: WebSocket, session_id: str) -> None:
             pass
     finally:
         receive_task.cancel()
+        try:
+            await asyncio.wait_for(asyncio.shield(receive_task), timeout=1.0)
+        except (asyncio.CancelledError, asyncio.TimeoutError):
+            pass
         session.update_state(SessionState.STOPPED)
         try:
             await websocket.send_text(json.dumps({"type": "session_stopped"}))
