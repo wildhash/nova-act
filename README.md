@@ -1,5 +1,23 @@
 # Nova Act SDK
 
+## Nova Clerk Voice Console
+
+Nova Clerk is a voice-driven operator console built on top of the Nova Act SDK. It lets you speak multi-step tasks aloud and watch Amazon Nova execute them in real time.
+
+- **Mock mode** — zero AWS credentials required; full demo pipeline runs in the browser
+- **Real mode** — streams audio to Amazon Nova 2 Sonic for live transcription, then orchestrates with Nova 2 Lite
+
+👉 **[Full demo guide and setup instructions →](docs/VOICE_DEMO.md)**
+
+```bash
+# Quick start (mock mode, no AWS needed)
+pip install -r services/backend/requirements.txt
+cd services/backend && uvicorn app.main:app --reload --port 8000
+# Open http://localhost:8000
+```
+
+---
+
 A Python SDK for Amazon Nova Act.
 
 Amazon Nova Act is available as a new AWS service to build and manage fleets of reliable AI agents for automating production UI workflows at scale. Nova Act completes repetitive UI workflows in the browser and escalates to a human supervisor when appropriate. You can define workflows by combining the flexibility of natural language with Python code. Start by exploring in the web playground at nova.amazon.com/act, develop and debug in your IDE, deploy to AWS, and monitor your workflows in the AWS Console, all in just a few steps.
